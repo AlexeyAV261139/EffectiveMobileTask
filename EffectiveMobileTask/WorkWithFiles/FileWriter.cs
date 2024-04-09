@@ -1,17 +1,16 @@
-﻿using EffectiveMobileTask;
-using IpSelector.Interfaces;
+﻿using System.Net;
 
 namespace IpSelector.WorkWithFiles
 {
-    public class FileWriter : IFileWriter
+    public class FileWriter
     {
-        public async Task WriteToFileAsync(string path, List<CounterRequestsFromIp> counters)
+        public static async Task WriteToFileAsync(string path, Dictionary<IPAddress, int> addresses)
         {
             using (StreamWriter writer = new(path, false))
             {
-                foreach (var counter in counters)
+                foreach (var address in addresses)
                 {
-                    await writer.WriteLineAsync(counter.ToString());
+                    await writer.WriteLineAsync($"{address.Key}:{address.Value}");
                 }
             }
         }

@@ -1,11 +1,10 @@
-﻿using IpSelector.Interfaces;
-using System.Net;
+﻿using System.Net;
 
 namespace EffectiveMobileTask
 {
     public class LogAnalyzer
     {        
-        public Dictionary<IPAddress, int> GetCountRequestsFromIpAddresses(
+        public static Dictionary<IPAddress, int> GetCountRequestsFromIpAddresses(
             List<LogData> data,
             SelectorsOptions options)
         {

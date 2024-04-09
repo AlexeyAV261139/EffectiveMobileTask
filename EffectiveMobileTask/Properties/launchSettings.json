@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IpSelector": {
+      "commandName": "Project",
+      "commandLineArgs": "IpSelector --delay 21 --message \"Hello world!\"\r\n"
+    }
+  }
+}

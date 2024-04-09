@@ -4,9 +4,9 @@ using System.Net;
 
 namespace IpSelector.WorkWithFiles
 {
-    public class FileReader : IFileReader
+    public class FileReader
     {
-        public async Task<List<LogData>> ReadFromFileAsync(string path)
+        public static async Task<List<LogData>> ReadFromFileAsync(string path)
         {
             List<LogData> logsData = new();
             using (StreamReader reader = new(path))
