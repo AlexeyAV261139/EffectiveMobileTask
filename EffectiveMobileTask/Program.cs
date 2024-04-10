@@ -59,7 +59,7 @@ namespace EffectiveMobileTask
 
             rootCommand.SetHandler(async (logPath, outputPath, options) =>
             {                
-                var logs = await FileReader.ReadFromFileAsync(logPath.FullName);
+                var logs = await LogsReader.ReadAsync(logPath.FullName);
                 var requests = LogAnalyzer.GetCountRequestsFromIpAddresses(logs, options);
                 await FileWriter.WriteToFileAsync(outputPath.FullName, requests);
             },
